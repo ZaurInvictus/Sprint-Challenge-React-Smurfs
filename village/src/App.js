@@ -36,32 +36,35 @@ class App extends Component {
   render() {
 
     const { smurfs } = this.state
-    
+
     return (
       <div className="App">
         <ul className='navbar'>
-          <li><NavLink exact to='/' activeClassName='activeButton'>Smurfs</NavLink></li>
-          <li><NavLink to='/smurf-form' activeClassName='activeButton'>Add Smurf</NavLink></li>
+          <li><NavLink exact to='/' activeClassName='activeButton'>
+             Smurfs
+          </NavLink></li>
+          <li><NavLink to='/smurf-form' activeClassName='activeButton'>
+            Add Smurf
+          </NavLink></li>
         </ul>
-      
-        <Route 
-          exact path='/' 
-          render={props => <Smurfs  {...props} 
+
+        <Route
+          exact path='/'
+          render={props => <Smurfs  {...props}
           smurfs={smurfs} />}
         />
 
-        <Route 
+        <Route
           path='/smurf-form'
-          render={props=> <SmurfForm {...props} 
+          render={props=> <SmurfForm {...props}
           updateSmurfs={this.updateSmurfs} />}
         />
 
-        <Route 
+        <Route
           path='/smurfs/:id'
-          render={props => <Smurf {...props} 
+          render={props => <Smurf {...props}
           smurfs={smurfs}
-          updateSmurfs={this.updateSmurfs}
-         />}
+          updateSmurfs={this.updateSmurfs} />}
        />
       </div>
     );

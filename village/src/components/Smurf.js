@@ -27,6 +27,7 @@ class Smurf extends React.Component {
               errorMessage: null
             })
             this.props.updateSmurfs(res.data)
+            this.props.history.push('/')
           })
           .catch(err => {
             this.setState({
@@ -95,7 +96,7 @@ class Smurf extends React.Component {
               name="height"
             />
             <div>
-              <button type="submit">Edit</button>
+              <button type="submit">Save</button>
               <button type="button" onClick={this.deleteSmurf}>Delete</button>
             </div>
           </form>
